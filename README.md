@@ -64,4 +64,3 @@ sprites.js      pixel art: crow frames, nest, feather, splat
 icons/          toolbar icons
 ```
 
-Made by Claude for Margot, with love and malice (｀Θ´)
