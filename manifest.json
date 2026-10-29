@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Evil Crow",
+  "version": "1.0.0",
+  "description": "Summons an evil pixel crow that wreaks havoc on whatever page you're on. CAW. CLAIM!",
+  "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Summon an evil crow (right-click for more)",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "commands": {
+    "summon-crow": { "suggested_key": { "default": "Alt+Shift+C" }, "description": "Summon an evil crow" },
+    "banish-crows": { "suggested_key": { "default": "Alt+Shift+X" }, "description": "Banish the crows" }
+  },
+  "content_scripts": [
+    { "matches": ["https://bsky.app/*"], "js": ["sprites.js", "crow.js"], "run_at": "document_idle" }
+  ]
+}
